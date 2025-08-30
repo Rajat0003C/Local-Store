@@ -10,7 +10,7 @@
     body { margin: 0; font-family: Arial, sans-serif; }
 
     header {
-      background: linear-gradient(135deg, #309a18, #277823);
+      background: linear-gradient(135deg, #309a18, #1c6818);
       color: rgb(255, 255, 255);
       padding: 0.4px;
       text-align: center;
@@ -31,81 +31,92 @@
     nav a:hover {
       text-decoration: rgb(200, 233, 169) underline ;
     }
+    h1{
+      color: #fbffde;
+    }
   </style>
 </head>
 <body>
 
 <header>
  <div style="display: flex; justify-content: space-between; align-items: start; padding: 15px; color: rgb(144, 187, 123);">
-     <!-- Right: Owner Name -->
-  <div style="font-style: italic;">
-   <b>@Owner</b>
-   Prof. Swapan Chakraborty
-  </div>
+    
+  
   </div>
   <h1>LOCAL STORE'S HOME DELHIVERY</h1>
-   <h3 style= "color:rgb(146, 215, 146)">Radharani Bhandar | Ambassa | Dhalai | Tripura | 799289</h3>
+   <h5 style= "color:rgba(201, 246, 170, 0.658)">Radharani Bhandar | Ambassa | Dhalai | Tripura | 799289</h5>
 </header>
 
 
+
   
-<style>
-  body {
-    font-family: Arial, sans-serif;
-  }
-  /* Hamburger Icon */
-  .menu-icon {
-     position: absolute;
-    cursor: pointer;
-    width: 30px;
-    margin: 20px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexible Hamburger Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
 
+    /* Hamburger Icon */
+    .menu-icon {
+      position: fixed; /* <-- now you can move anywhere */
+      top: 0px;       /* change Y position */
+      left: 10px;      /* change X position (use right:20px for right side) */
+      cursor: pointer;
+      width: 30px;
+      z-index: 1100;
+    }
 
-  .bar {
-    height: 4px;
-    width: 100%;
-    background-color: rgb(133, 120, 8);
-    margin: 6px 0;
-    border-radius: 5px;
-  }
+    .bar {
+      height: 4px;
+      width: 100%;
+      background-color: rgb(0, 0, 0);
+      margin: 6px 0;
+      border-radius: 5px;
+    }
 
-  .menu-icon:hover {
-transform: scale(1.1);
-  }
+    .menu-icon:hover {
+      transform: scale(1.1);
+    }
 
-  /* Hidden menu */
-  .menu {
-    display: none;
-    flex-direction: column;
-    background: linear-gradient(135deg, #309a18, #277823);
-    padding: 10px;
-    width: 150px;
-    position: absolute;
-    top: 60px;
-    left: 20px;
-    box-shadow: 0 2px 8px rgb(0, 0, 0);
-    border-radius: 10px;
-    z-index: 1000;
-  }
-  .menu a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    padding: 8px;
-    margin: 4px 0;
-    border-radius: 6px;
-    background: linear-gradient(-135deg, #309a18, #158d11);
-    transition: background 0.3s;
-  }
-  .menu a:hover {
-    background: #ddd;
-    color: black;
-    transform: scale(1);
-  }
-</style>
+    /* Hidden menu */
+    .menu {
+      display: none;
+      flex-direction: column;
+      background: linear-gradient(135deg, #309a18, #277823);
+      padding: 10px;
+      width: 180px;
+      position: fixed; /* <-- also flexible */
+      top: 70px;       /* adjust vertical placement */
+      left: 20px;      /* adjust horizontal placement */
+      box-shadow: 0 2px 8px rgb(0, 0, 0);
+      border-radius: 10px;
+      z-index: 1000;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #fff;
+      padding: 8px;
+      margin: 4px 0;
+      border-radius: 6px;
+      background: linear-gradient(-135deg, #309a18, #158d11);
+      transition: background 0.3s;
+    }
+
+    .menu a:hover {
+      background: #ddd;
+      color: black;
+      transform: scale(1);
+    }
+  </style>
 </head>
 <body>
-
   <!-- Hamburger Icon -->
   <div class="menu-icon" onclick="toggleMenu()" id="menuIcon">
     <div class="bar"></div>
@@ -122,22 +133,25 @@ transform: scale(1.1);
     <a href="about.html">About</a>
   </div>
 
-<script>
-function toggleMenu() {
-  const menu = document.getElementById("menu");
-  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-}
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
 
-// Close menu if clicked outside
-document.addEventListener("click", function(event) {
-  const menu = document.getElementById("menu");
-  const menuIcon = document.getElementById("menuIcon");
+    // Close menu if clicked outside
+    document.addEventListener("click", function(event) {
+      const menu = document.getElementById("menu");
+      const menuIcon = document.getElementById("menuIcon");
 
-  if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
-    menu.style.display = "none";
-  }
-});
-</script>
+      if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+        menu.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
+
 
 
   
@@ -170,7 +184,7 @@ document.addEventListener("click", function(event) {
       font-size: 16px;
       border: none;
       border-radius: 8px;
-      background: #309a18;
+      background: #a8a50d;
       color: white;
       cursor: pointer;
       transition: background 0.3s;
@@ -178,12 +192,12 @@ document.addEventListener("click", function(event) {
 
     /* Darken when hovered */
     #searchBtn:hover {
-      background: #1f5e14;
+      background: #5e6603;
     }
 
     /* Darken when input is focused */
     #searchBar:focus + #searchBtn {
-      background: #1f5e14;
+      background: #4c5e14;
     }
   </style>
 </head>
@@ -192,7 +206,7 @@ document.addEventListener("click", function(event) {
   <!-- 🔍 Search -->
   <div class="search-box">
     <input type="text" id="searchBar" placeholder="🔍 Search here...">
-    <button id="searchBtn" onclick="doSearch()">Search</button>
+    <button id="searchBtn" onclick="doSearch()">🔍︎</button>
   </div>
 
   <p id="result"></p>
@@ -270,7 +284,7 @@ document.addEventListener("click", function(event) {
 <style>
 .account-icon {
   position: fixed;
-  top: 19.7px;
+  top: 5.7px;
   right: 75px;
   cursor: pointer;
 }
@@ -348,10 +362,9 @@ document.addEventListener("click", function(event) {
    transition: background 0.3s;
 }
 
-.account-menu a:hover {
-  background: #ddd;
-  color:black;
-  transform: scale(1);
+.account-icon a :hover {
+  
+  transform: scale(1.2);
 }
 </style>
 
@@ -387,19 +400,21 @@ document.addEventListener("click", function(event) {
 <style>
 .cart-container {
   position: fixed;
-  top: 15px;
-  right: 20px;
+  top: 4.5px;
+  right: 23px;
   cursor: pointer;
 }
 
 .cart-icon {
-  font-size: 28px;
-  position: relative;
+  width: 31px;
+  height: 31px;
+  display: block;
+  margin: 0 auto;
 }
 
 .cart-badge {
   position: absolute;
-  top: -10px;
+  top: 25px;
   right: -12px;
   background: red;
   color: white;
@@ -407,12 +422,12 @@ document.addEventListener("click", function(event) {
   padding: 2px 6px;
   border-radius: 50%;
 }
-.cart-badge:hover {
+.cart-icon:hover {
   transform: scale(1.2);
 }
 </style>
 <div class="cart-container" onclick="window.location.href='cart.html'">
-  <span class="cart-icon">🛒</span>
+ <img src="https://cdn-icons-png.flaticon.com/512/2832/2832517.png" alt="Cart" class="cart-icon">
   <span class="cart-badge" id="cart-count">0</span>
 </div>
 
@@ -429,7 +444,7 @@ document.addEventListener("click", function(event) {
 
 .home-icon {
   position: fixed;
-  top: 20px;
+  top: 5px;
   right: 130px;
   cursor: pointer;
   z-index: 1000;
